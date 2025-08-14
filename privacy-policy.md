@@ -31,7 +31,6 @@ To provide enhanced functionality including cross device synchronization and imp
 ### 3. Purchase Information
 - **Purchase History:** Records of in-app purchases and subscription status for premium features
 - **Subscription Data:** Monthly subscription status for cross-device sync and premium features
-- **Payment Processing:** Transaction data processed through RevenueCat or similar payment services
 - **Usage-Based Billing:** Pay-per-use records for AI analytics features
 
 ### 4. Usage Data
@@ -72,7 +71,6 @@ We collect and use your information to:
 
 ### User Support
 - Respond to support requests and technical inquiries
-- Process in-app purchases and manage subscriptions through RevenueCat
 - Send important service notifications and updates
 - Facilitate social features like anonymous leaderboards and challenges
 - Enable progress sharing and community participation
@@ -173,4 +171,4 @@ For users in the European Union, you also have the right to lodge a complaint wi
 
 ---
 
-*This Privacy Policy was last updated on January 1, 2025, and is effective immediately upon posting.*
+*This Privacy Policy was last updated on Auguest 14, 2025, and is effective immediately upon posting.*
