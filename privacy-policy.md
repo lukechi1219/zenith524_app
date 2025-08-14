@@ -9,13 +9,13 @@ Your privacy is important to us. This Privacy Policy explains how our Focus Time
 
 ## Data Collection Overview
 
-To provide enhanced functionality including cloud synchronization and improved user experience, we collect the following types of information:
+To provide enhanced functionality including cross device synchronization and improved user experience, we collect the following types of information:
 
 ## Information We Collect
 
 ### 1. User Content
 - **Focus Session Data:** Your timer sessions, focus periods, break durations, and productivity statistics
-- **Task Data:** Tasks you create and their completion status when using Firestore integration
+- **Task Data:** Task names you create and task completion status
 - **Daily Time Summaries:** Calculated daily focus time and productivity metrics
 - **User Settings:** App preferences, timer configurations, and personalization choices
 - **Achievement Data:** Badge progress, experience points, streaks, and gamification elements
@@ -23,7 +23,7 @@ To provide enhanced functionality including cloud synchronization and improved u
 - **Other User Content:** Any additional content you create within the app
 
 ### 2. Identifiers
-- **User ID:** Unique account identifiers assigned when you create an account or use cloud features
+- **User ID:** Unique account identifiers assigned when you create an account or use our features
 - **Anonymous User UUID:** Anonymous identifiers for cross-device synchronization without personal identification
 - **Device ID:** Device-specific identifiers to enable synchronization across your devices
 - **Authentication Tokens:** Secure tokens for email and Google authentication services
@@ -56,9 +56,9 @@ We collect and use your information to:
 
 ### Core App Functionality
 - Provide Focus timer services and productivity tracking
-- Save and sync your session data across devices through Firebase cloud services
-- Store tasks and session data in Firestore for enhanced functionality
-- Maintain your app preferences and settings both locally and in the cloud
+- Save and sync your session data across devices through our services
+- Store tasks and session data in our services for enhanced functionality
+- Maintain your app preferences and settings both locally and in our services
 - Calculate productivity statistics, focus rates, and daily time summaries
 - Enable offline mode with automatic sync when online
 - Provide gamification features including badges, experience points, and streaks
@@ -91,9 +91,9 @@ We collect and use your information to:
 ## Data Storage and Security
 
 ### Storage Infrastructure
-- Your data is securely stored using Google Firebase cloud services
+- Your data is securely stored using Google Firebase services
 - All data transmission between your device and our servers is encrypted using industry-standard TLS protocols
-- Firebase provides enterprise-grade security with multiple layers of protection
+- Google Firebase provides enterprise-grade security with multiple layers of protection
 
 ### Data Retention
 - **Free Tier Users:** Session data is retained for 2 weeks, after which older data is automatically deleted
@@ -113,9 +113,7 @@ We collect and use your information to:
 We do not sell, rent, or trade your personal information. We may share information only in these limited circumstances:
 
 ### Service Providers
-- **Google Firebase:** Cloud storage, authentication, and synchronization services
-- **RevenueCat:** Payment processing and subscription management
-- **SurveyMonkey:** Third-party survey integration for user feedback
+- **Google Firebase:** storage and authentication services
 - **Analytics Providers:** Usage analytics with anonymized data
 - **AI Analytics Partners:** Third-party AI services for advanced productivity insights (pay-per-use)
 
