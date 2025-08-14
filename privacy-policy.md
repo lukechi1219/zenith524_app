@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Your privacy is important to us. This Privacy Policy explains how our Pomodoro Timer application ("Zenith Pomodoro" or "the App") collects, uses, and protects your information when you use our services.
+Your privacy is important to us. This Privacy Policy explains how our Focus Timer application ("Zenith Focus" or "the App") collects, uses, and protects your information when you use our services.
 
 ## Data Collection Overview
 
@@ -14,7 +14,7 @@ To provide enhanced functionality including cloud synchronization and improved u
 ## Information We Collect
 
 ### 1. User Content
-- **Pomodoro Session Data:** Your timer sessions, focus periods, break durations, and productivity statistics
+- **Focus Session Data:** Your timer sessions, focus periods, break durations, and productivity statistics
 - **Task Data:** Tasks you create and their completion status when using Firestore integration
 - **Daily Time Summaries:** Calculated daily focus time and productivity metrics
 - **User Settings:** App preferences, timer configurations, and personalization choices
@@ -55,7 +55,7 @@ To provide enhanced functionality including cloud synchronization and improved u
 We collect and use your information to:
 
 ### Core App Functionality
-- Provide Pomodoro timer services and productivity tracking
+- Provide Focus timer services and productivity tracking
 - Save and sync your session data across devices through Firebase cloud services
 - Store tasks and session data in Firestore for enhanced functionality
 - Maintain your app preferences and settings both locally and in the cloud
@@ -146,7 +146,7 @@ Depending on your location, you may have the following rights regarding your per
 
 ## Children's Privacy
 
-Zenith Pomodoro is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately and we will delete such information.
+Zenith Focus is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately and we will delete such information.
 
 ## International Data Transfers
 
