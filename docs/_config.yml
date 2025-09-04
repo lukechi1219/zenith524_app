@@ -1,0 +1,124 @@
+# Jekyll 配置文件
+title: 專注力大師
+description: 重新掌控你的時間，讓每一分鐘都發揮最大價值
+baseurl: "/zenith524_app"
+url: "https://lukechi1219.github.io"
+
+# Jekyll 設定
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 排除文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 網站資訊
+author:
+  name: 專注力大師團隊
+  email: contact@zenith524.com
+
+# 社群連結
+github_username: lukechimbp2023
+
+# 分頁設定
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# 集合設定
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# 預設值
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "專注力大師"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# 導航設定
+navigation:
+  - name: 首頁
+    link: /
+  - name: 文章總覽
+    link: /articles/
+  - name: 關於
+    link: /about/
+
+# 側邊欄分類
+sidebar_categories:
+  - title: "基礎入門"
+    articles:
+      - title: "番茄工作法新手指南"
+        file: "blog_01_pomodoro_beginner_guide"
+        description: "25分鐘改變你的工作效率"
+      - title: "數位排毒"
+        file: "blog_02_beating_digital_distractions"
+        description: "如何在手機時代重新找回專注力"
+      - title: "打造完美專注環境"
+        file: "blog_03_perfect_focus_environment"
+        description: "讓空間為你的效率加分"
+  
+  - title: "進階技巧"
+    articles:
+      - title: "不同任務的專注策略"
+        file: "blog_04_task_specific_strategies"
+        description: "一招走天下已經過時了"
+      - title: "數據驅動的生產力"
+        file: "blog_05_data_driven_productivity"
+        description: "用科學方法了解你的專注模式"
+      - title: "專注力大師完全攻略"
+        file: "blog_11_smart_features_guide"
+        description: "解鎖所有隱藏功能讓你更高效"
+  
+  - title: "團隊與人群應用"
+    articles:
+      - title: "團隊專注力"
+        file: "blog_06_team_productivity"
+        description: "如何讓整個團隊都愛上番茄工作法"
+      - title: "學霸秘密武器"
+        file: "blog_07_student_study_techniques"
+        description: "用番茄工作法征服考試和作業"
+      - title: "忙碌父母的時間魔法"
+        file: "blog_08_parent_time_management"
+        description: "在育兒生活中找回專注力"
+      - title: "自由工作者的自律秘笈"
+        file: "blog_09_freelancer_discipline"
+        description: "在家工作也能超高效"
+  
+  - title: "深度心理與科學"
+    articles:
+      - title: "專注力習慣化"
+        file: "blog_10_long_term_habits"
+        description: "如何讓高效成為你的自然反應"
+      - title: "專注力的科學"
+        file: "blog_12_focus_science"
+        description: "大腦如何學會持續專注"
+      - title: "從焦慮到從容"
+        file: "blog_14_stress_management"
+        description: "用專注力管理現代生活壓力"
+  
+  - title: "成功案例與迷思破解"
+    articles:
+      - title: "真實改變故事"
+        file: "blog_13_success_stories"
+        description: "專注力大師用戶如何翻轉人生"
+      - title: "生產力迷思大破解"
+        file: "blog_15_productivity_myths"
+        description: "那些聽起來很厲害但其實有害的效率建議"

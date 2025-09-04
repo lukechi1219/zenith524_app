@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #f8f9fa;
+            --accent-color: #28a745;
+            --text-color: #333;
+            --sidebar-width: 280px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: var(--sidebar-width);
+            background: var(--secondary-color);
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            padding: 20px 0;
+            z-index: 1000;
+        }
+        
+        .sidebar-brand {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-brand h3 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .sidebar-brand p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 5px 0 0;
+        }
+        
+        .sidebar-nav {
+            padding: 0;
+            list-style: none;
+        }
+        
+        .nav-category {
+            margin-bottom: 25px;
+        }
+        
+        .nav-category-title {
+            padding: 10px 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        
+        .nav-item {
+            margin: 0;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 8px 20px 8px 30px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .nav-link:hover {
+            background-color: #e9ecef;
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-left-color: var(--accent-color);
+        }
+        
+        .nav-description {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+        
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px 40px;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+        
+        .content-header {
+            background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+            color: white;
+            padding: 40px 0;
+            margin: -20px -40px 30px;
+            text-align: center;
+        }
+        
+        .content-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .content-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .article-content h3 {
+            color: var(--accent-color);
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .article-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .article-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .article-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .content-header {
+                margin: -20px -20px 30px;
+            }
+            
+            .mobile-toggle {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 1001;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                display: block;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Toggle Button -->
+    <button class="mobile-toggle d-md-none" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <h3>{{ site.title }}</h3>
+            <p>{{ site.description }}</p>
+        </div>
+        
+        <ul class="sidebar-nav">
+            {% for category in site.sidebar_categories %}
+            <li class="nav-category">
+                <div class="nav-category-title">
+                    {{ category.title }}
+                </div>
+                {% for article in category.articles %}
+                <div class="nav-item">
+                    <a href="{{ article.file }}.html" class="nav-link">
+                        {{ article.title }}
+                        <div class="nav-description">{{ article.description }}</div>
+                    </a>
+                </div>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        {% if page.layout == 'home' %}
+        <header class="content-header">
+            <div class="container">
+                <h1>{{ site.title }}</h1>
+                <p>{{ site.description }}</p>
+            </div>
+        </header>
+        {% endif %}
+        
+        <div class="article-content">
+            {{ content }}
+        </div>
+    </main>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('show');
+        }
+        
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.mobile-toggle');
+            
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(e.target) && 
+                !toggle.contains(e.target)) {
+                sidebar.classList.remove('show');
+            }
+        });
+        
+        // Highlight current page in sidebar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPath.includes(linkPath.replace('.html', '')) || 
+                    (currentPath === '/' && linkPath.includes('index'))) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
